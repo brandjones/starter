@@ -1,8 +1,7 @@
 import axios from 'axios';
+import { POST_USER } from './types';
 
-// Sample post to the server that allows for CORS.
-export const POSTUSER = 'POST_USER';
-export const POST_USER = (username, password) => {
+export const fetchuser = (username, password) => {
 	const request = axios({
 		method: 'post',
 		url: '/register',
@@ -12,7 +11,7 @@ export const POST_USER = (username, password) => {
 		}
 	});
 	return {
-		type: POSTUSER,
+		type: POST_USER,
 		payload: request
 	};
 };

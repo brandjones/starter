@@ -1,15 +1,11 @@
-import { POSTUSER } from '../actions/action-user';
+import { POST_USER } from '../actions/types';
 
-const userReducerDefaultState = [];
+const userReducerDefaultState = {};
 export default (state = userReducerDefaultState, action) => {
 	switch (action.type) {
-		case POSTUSER:
+		case POST_USER:
 			console.log(state);
 			console.log(action);
-			return {
-				...state,
-				...action.payload.data
-			};
 
 		default:
 			return [];

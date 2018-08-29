@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 
-import { POST_USER } from '../actions/action-user';
+import { fetchuser } from '../actions/action-user';
 
 class SignInForm extends React.Component {
 	constructor(props) {
@@ -52,7 +52,7 @@ class SignInForm extends React.Component {
 		});
 
 		this.props.dispatch(
-			POST_USER(this.state.username, this.state.password)
+			fetchuser(this.state.username, this.state.password)
 		);
 		this.props.history.push('/');
 	}
